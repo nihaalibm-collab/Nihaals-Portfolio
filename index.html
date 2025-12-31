@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Nihaal S | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(45, 212, 191, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-progress {
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .radar-shape {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s linear forwards;
+        }
+
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden text-slate-800">
+
+    <!-- Blurred Background Blobs -->
+    <div class="blob top-[-100px] right-[-100px]"></div>
+    <div class="blob top-[600px] left-[-200px]"></div>
+    <div class="blob bottom-[100px] right-[-100px]"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-teal-600">NIHAAL</a>
+            <div class="hidden md:flex gap-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-teal-500 transition-colors">Home</a>
+                <a href="#about" class="hover:text-teal-500 transition-colors">About</a>
+                <a href="#skills" class="hover:text-teal-500 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-teal-500 transition-colors">Project</a>
+                <a href="#contact" class="hover:text-teal-500 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32">
+        
+        <!-- Hero Section -->
+        <section id="home" class="flex flex-col md:flex-row items-center justify-between py-20 gap-12">
+            <div class="flex-1 reveal">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                    Hi, I'm<br>
+                    <span class="text-teal-500">Mohamed Nihaal S</span>
+                </h1>
+                <p class="text-xl text-slate-500 font-medium mb-6">Web Developer & UI/UX Designer</p>
+                <p class="text-slate-400 max-w-md mb-8 leading-relaxed">
+                    Creating innovative and user-friendly digital experiences. Turning complex problems into simple, beautiful, and intuitive designs.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#projects" class="bg-teal-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-teal-600 transition-all shadow-lg shadow-teal-200">View my work</a>
+                    <a href="#contact" class="border-2 border-slate-200 px-8 py-3 rounded-full font-semibold hover:border-teal-500 hover:text-teal-500 transition-all">Hire Me</a>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center reveal" style="transition-delay: 200ms;">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-teal-100 rounded-3xl rotate-6 -z-10"></div>
+                    <img src="https://physical-ivory-jckzmuaa4e.edgeone.app/5229245e-a8f4-4ca0-8d16-37ff29183698.jpg" alt="Nihaal" class="w-80 h-96 object-cover rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 reveal">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-teal-400 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative bg-white p-2 rounded-2xl shadow-xl">
+                        <img src="https://controversial-gray-xiterru7g2.edgeone.app/cd76d793c30eb1d8afdb9193ce0b8984.jpg" alt="Coding" class="rounded-xl w-full">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 reveal" style="transition-delay: 200ms;">
+                <div class="flex items-center gap-2 text-teal-500 font-bold mb-4 uppercase tracking-widest text-sm">
+                    <i class="fas fa-user"></i> ABOUT ME
+                </div>
+                <h2 class="text-4xl font-bold mb-6">Passionate about Web Development & Design</h2>
+                <p class="text-slate-500 leading-relaxed mb-8">
+                    Hi! I'm a motivated web developer with skills in HTML, CSS, and Figma. I bring creativity, problem-solving and a passion for learning. Although I am early in my career, I am actively building projects to refine my craft. Let's collaborate to create innovative, user-friendly websites.
+                </p>
+                <div class="bg-white border border-slate-100 p-6 rounded-2xl mb-6 shadow-sm">
+                    <p class="font-bold text-slate-800">B.Sc. Computer Science</p>
+                </div>
+                <a href="https://bewildered-indigo-offc579s3y.edgeone.app/e4012f38-5181-4160-8e94-5af3c329b6f2.jpg" class="text-teal-500 font-bold flex items-center gap-2 hover:translate-x-2 transition-transform">
+                    Download Resume <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-32">
+            <div class="text-center md:text-left mb-16 reveal">
+                <div class="text-teal-500 font-bold mb-2 uppercase tracking-widest text-sm">MY SKILLS</div>
+                <h2 class="text-4xl font-bold">Technical Experties</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="flex-1 space-y-8 reveal">
+                    <!-- Skill Item -->
+                    <div class="skill-container" data-percent="95">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold flex items-center gap-2"><i class="fab fa-figma"></i> Figma</span>
+                            <span class="text-slate-400">95%</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-teal-500" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container" data-percent="100">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold flex items-center gap-2"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="text-slate-400">100%</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-teal-500" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container" data-percent="100">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold flex items-center gap-2"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="text-slate-400">100%</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-teal-500" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-container" data-percent="90">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold flex items-center gap-2"><i class="fas fa-file-excel"></i> Excel</span>
+                            <span class="text-slate-400">90%</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div class="skill-progress h-full bg-teal-500" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex flex-col items-center justify-center bg-white rounded-3xl shadow-xl p-8 reveal" style="transition-delay: 200ms;">
+                    <p class="font-bold mb-6 text-slate-500">Competency Radar</p>
+                    <svg viewBox="0 0 200 200" class="w-full max-w-[300px]">
+                        <!-- Simple Radar Visualization -->
+                        <polygon points="100,20 160,50 170,130 130,180 70,180 30,130 40,50" fill="rgba(20, 184, 166, 0.1)" stroke="#14b8a6" stroke-width="1"/>
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#f1f5f9" stroke-width="1"/>
+                        <circle cx="100" cy="100" r="50" fill="none" stroke="#f1f5f9" stroke-width="1"/>
+                        <line x1="100" y1="20" x2="100" y2="180" stroke="#f1f5f9"/>
+                        <line x1="30" y1="130" x2="170" y2="70" stroke="#f1f5f9"/>
+                        <line x1="30" y1="70" x2="170" y2="130" stroke="#f1f5f9"/>
+                        <text x="100" y="15" text-anchor="middle" font-size="8" class="fill-slate-400">Figma</text>
+                        <text x="175" y="60" text-anchor="middle" font-size="8" class="fill-slate-400">HTML</text>
+                        <text x="175" y="140" text-anchor="middle" font-size="8" class="fill-slate-400">CSS</text>
+                        <text x="135" y="195" text-anchor="middle" font-size="8" class="fill-slate-400">Excel</text>
+                        <text x="65" y="195" text-anchor="middle" font-size="8" class="fill-slate-400">Power BI</text>
+                        <text x="25" y="140" text-anchor="middle" font-size="8" class="fill-slate-400">Java</text>
+                        <text x="25" y="60" text-anchor="middle" font-size="8" class="fill-slate-400">C</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-32">
+            <div class="flex justify-between items-end mb-16 reveal">
+                <div>
+                    <div class="text-teal-500 font-bold mb-2 uppercase tracking-widest text-sm">PORTFOLIO</div>
+                    <h2 class="text-4xl font-bold">Featured Project</h2>
+                </div>
+                <a href="https://github.com/nihaalibm-collab" class="text-teal-500 font-bold flex items-center gap-2">
+                    View Github <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-50 hover:shadow-2xl transition-all group reveal">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://decent-amber-xhbf4aypzy.edgeone.app/4d233440535b0b333988949c8af9aff3.jpg" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Slot Booking Project</h3>
+                        <p class="text-slate-500 text-sm mb-4">A simple clear UI for booking time slots. Built with a focus on usability...</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase">HTML</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase">CSS</span>
+                        </div>
+                        <a href="#" class="text-teal-500 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">view details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-50 hover:shadow-2xl transition-all group reveal" style="transition-delay: 200ms;">
+                    <div class="h-48 overflow-hidden bg-purple-50 flex items-center justify-center">
+                        <div class="text-purple-600 font-bold text-2xl tracking-widest">HACKATHON</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hackathon Project</h3>
+                        <p class="text-slate-500 text-sm mb-4">An innovative interactive design integrating AI-based features to...</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase">Figma</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase">AI</span>
+                        </div>
+                        <a href="https://farmereasy.netlify.app/" class="text-teal-500 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">view details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-50 hover:shadow-2xl transition-all group reveal" style="transition-delay: 400ms;">
+                    <div class="h-48 overflow-hidden bg-slate-50 p-6 flex items-center justify-center">
+                        <div class="bg-white shadow-xl p-4 rounded-lg w-full">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-teal-500"></div>
+                                <div class="h-2 w-20 bg-slate-100"></div>
+                            </div>
+                            <div class="h-1 w-full bg-slate-50 mb-1"></div>
+                            <div class="h-1 w-3/4 bg-slate-50"></div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Concept</h3>
+                        <p class="text-slate-500 text-sm mb-4">A light-model exploration of personal branding sites, focusing on...</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase">Figma</span>
+                        </div>
+                        <a href="#" class="text-teal-500 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">view details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 grid md:grid-cols-2 gap-16">
+            <div class="reveal">
+                <div class="text-teal-500 font-bold mb-2 uppercase tracking-widest text-sm">GET IN TOUCH</div>
+                <h2 class="text-4xl font-bold mb-4">Let's Talk About Your Project</h2>
+                <p class="text-slate-500 mb-12">Have an idea or just want to say hi? Feel free to reach out. I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+                
+                <div class="space-y-6">
+                    <div class="bg-white border border-slate-100 p-6 rounded-2xl flex items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center text-xl">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-xs font-bold uppercase">Email</p>
+                            <p class="font-bold text-slate-800">nihaalfarhan@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-slate-100 p-6 rounded-2xl flex items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center text-xl">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-xs font-bold uppercase">Phone</p>
+                            <p class="font-bold text-slate-800">7358520507</p>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-slate-100 p-6 rounded-2xl flex items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-xs font-bold uppercase">Linkedin</p>
+                            <p class="font-bold text-slate-800">Mohamed Nihaal S</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-slate-50">
+                    <h3 class="text-2xl font-bold text-center mb-10">Contact Us</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-600 mb-2">Name:</label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-600 mb-2">Email:</label>
+                            <input type="email" class="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-600 mb-2">Message:</label>
+                            <textarea rows="4" class="w-full bg-slate-50 border border-slate-100 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-[#ff708a] text-white py-4 rounded-xl font-bold hover:brightness-105 transition-all shadow-lg shadow-pink-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-white pt-20 pb-10 mt-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
+                <div>
+                    <h2 class="text-2xl font-bold mb-1">Nihaal<span class="text-teal-500">.</span></h2>
+                    <p class="text-slate-400 text-sm">Web Developer & UI/UX Designer</p>
+                </div>
+                <div class="flex gap-6 text-xl">
+                    <a href="#" class="hover:text-teal-400 transition-colors"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="hover:text-teal-400 transition-colors"><i class="fas fa-phone"></i></a>
+                    <a href="#" class="hover:text-teal-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500 text-xs">© 2023 Mohamed Nihaal S. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Specific logic for skill bars
+                    if (entry.target.id === 'skills') {
+                        const bars = entry.target.querySelectorAll('.skill-progress');
+                        bars.forEach(bar => {
+                            const percent = bar.parentElement.parentElement.dataset.percent;
+                            bar.style.width = percent + '%';
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, #skills').forEach(el => observer.observe(el));
+
+        // Smooth nav highlight
+        window.addEventListener('scroll', () => {
+            let current = "";
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            document.querySelectorAll("nav div a").forEach((a) => {
+                a.classList.remove("text-teal-500");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("text-teal-500");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
